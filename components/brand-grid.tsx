@@ -6,7 +6,7 @@ const brands = [
   { id: 1, name: "Bodycare", image: "/placeholder.svg?height=400&width=400" },
   { id: 2, name: "Lyra", image: "/images/lyra-banner.png" },
   { id: 3, name: "Supersox", image: "/images/supersox-banner.png" },
-  { id: 4, name: "Zeel", image: "/placeholder.svg?height=400&width=400" },
+  { id: 4, name: "Zeel", image: "/images/zeel-banner-new.png" },
   { id: 5, name: "Pinklush", image: "/placeholder.svg?height=400&width=400" },
   { id: 6, name: "Zoom", image: "/placeholder.svg?height=400&width=400" },
   { id: 7, name: "Mitushi", image: "/images/mitushi-banner.png" },
