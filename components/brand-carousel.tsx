@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 
 const brands = [
   { id: 1, name: "Bodycare", image: "/placeholder.svg?height=600&width=1200" },
-  { id: 2, name: "Lyra", image: "/placeholder.svg?height=600&width=1200" },
+  { id: 2, name: "Lyra", image: "public/images/LYRA-WEB-BANNER-1800-X-800_c3160024-4be3-4c77-aedd-10b9896fb567_1944x.png?height=600&width=1200" },
   { id: 3, name: "Supersox", image: "/placeholder.svg?height=600&width=1200" },
   { id: 4, name: "Zeel", image: "/placeholder.svg?height=600&width=1200" },
   { id: 5, name: "Pinklush", image: "/placeholder.svg?height=600&width=1200" },
