@@ -22,20 +22,20 @@ export default function BrandGrid() {
         <Link
           key={brand.id}
           href={`/brands/${brand.name.toLowerCase().replace(/\s+/g, "-")}`}
-          className="group relative overflow-hidden rounded-md border bg-white transition-all hover:shadow-md"
+          className="group relative overflow-hidden rounded-2xl border bg-white transition-all hover:shadow-md hover:shadow-sky-100"
         >
-          <div className="aspect-square relative overflow-hidden">
+          <div className="aspect-square relative overflow-hidden rounded-t-2xl">
             <Image
               src={brand.image || "/placeholder.svg"}
               alt={brand.name}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20"></div>
+            <div className="absolute inset-0 bg-sky-500/0 transition-colors group-hover:bg-sky-500/20"></div>
           </div>
           <div className="p-4">
-            <h3 className="text-lg font-medium">{brand.name}</h3>
-            <div className="mt-2 flex items-center text-sm text-gray-500 group-hover:text-gray-900">
+            <h3 className="text-lg font-medium text-sky-700">{brand.name}</h3>
+            <div className="mt-2 flex items-center text-sm text-sky-500 group-hover:text-sky-600">
               <span>View Collection</span>
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </div>

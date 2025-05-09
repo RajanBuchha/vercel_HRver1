@@ -44,8 +44,8 @@ export default function BrandCarousel() {
   }, [goToNext])
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden">
+    <div className="relative overflow-hidden rounded-3xl">
+      <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-3xl">
         {brands.map((brand, index) => (
           <div
             key={brand.id}
@@ -57,15 +57,15 @@ export default function BrandCarousel() {
               src={brand.image || "/placeholder.svg"}
               alt={brand.name}
               fill
-              className="object-cover"
+              className="object-cover rounded-3xl"
               priority={index === currentIndex}
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div className="absolute inset-0 bg-sky-900/30 flex items-center justify-center rounded-3xl">
               <div className="text-center text-white">
                 <h3 className="text-2xl md:text-4xl font-bold mb-4">{brand.name}</h3>
                 <Button
                   variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-black"
+                  className="bg-transparent border-white text-white hover:bg-white hover:text-sky-700 rounded-full"
                 >
                   Explore Collection
                 </Button>
@@ -79,7 +79,7 @@ export default function BrandCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-2 top-1/2 z-20 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/40"
+        className="absolute left-2 top-1/2 z-20 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full"
         onClick={goToPrevious}
         disabled={isAnimating}
       >
@@ -90,7 +90,7 @@ export default function BrandCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-2 top-1/2 z-20 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/40"
+        className="absolute right-2 top-1/2 z-20 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full"
         onClick={goToNext}
         disabled={isAnimating}
       >
