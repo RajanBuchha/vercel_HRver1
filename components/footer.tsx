@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-sky-100 bg-white py-12">
+    <footer className="w-full border-t border-gray-100 bg-white py-12">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
@@ -18,66 +18,66 @@ export default function Footer() {
                 height={40}
                 className="rounded-full"
               />
-              <span className="text-xl font-bold text-sky-600">H R Apparel</span>
+              <span className="text-xl font-bold text-gray-900">H R Apparel</span>
             </Link>
-            <p className="text-sm text-sky-500">The ultimate destination for premium fashion brands.</p>
+            <p className="text-sm text-gray-600">The ultimate destination for premium fashion brands.</p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium text-sky-700">Quick Links</h3>
+            <h3 className="text-lg font-medium text-gray-900">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/" className="text-sm text-gray-600 hover:text-gray-900">
                 Home
               </Link>
-              <Link href="/products" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/products" className="text-sm text-gray-600 hover:text-gray-900">
                 Products
               </Link>
-              <Link href="/about" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900">
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900">
                 Contact
               </Link>
             </nav>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium text-sky-700">Brands</h3>
+            <h3 className="text-lg font-medium text-gray-900">Brands</h3>
             <nav className="grid grid-cols-2 gap-2">
-              <Link href="/brands/bodycare" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/bodycare" className="text-sm text-gray-600 hover:text-gray-900">
                 Bodycare
               </Link>
-              <Link href="/brands/lyra" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/lyra" className="text-sm text-gray-600 hover:text-gray-900">
                 Lyra
               </Link>
-              <Link href="/brands/supersox" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/supersox" className="text-sm text-gray-600 hover:text-gray-900">
                 Supersox
               </Link>
-              <Link href="/brands/zeel" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/zeel" className="text-sm text-gray-600 hover:text-gray-900">
                 Zeel
               </Link>
-              <Link href="/brands/pinklush" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/pinklush" className="text-sm text-gray-600 hover:text-gray-900">
                 Pinklush
               </Link>
-              <Link href="/brands/zoom" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/zoom" className="text-sm text-gray-600 hover:text-gray-900">
                 Zoom
               </Link>
-              <Link href="/brands/mitushi" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/mitushi" className="text-sm text-gray-600 hover:text-gray-900">
                 Mitushi
               </Link>
-              <Link href="/brands/niomoda" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/niomoda" className="text-sm text-gray-600 hover:text-gray-900">
                 Niomoda
               </Link>
-              <Link href="/brands/citizen" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/citizen" className="text-sm text-gray-600 hover:text-gray-900">
                 Citizen
               </Link>
-              <Link href="/brands/tag-hills" className="text-sm text-sky-500 hover:text-sky-700">
+              <Link href="/brands/tag-hills" className="text-sm text-gray-600 hover:text-gray-900">
                 Tag Hills
               </Link>
             </nav>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg font-medium text-sky-700">Connect</h3>
+            <h3 className="text-lg font-medium text-gray-900">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="#" className="text-sky-500 hover:text-sky-700">
+              <Link href="#" className="text-gray-600 hover:text-gray-900">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -94,7 +94,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-sky-500 hover:text-sky-700">
+              <Link href="#" className="text-gray-600 hover:text-gray-900">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -113,7 +113,7 @@ export default function Footer() {
                 </svg>
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="text-sky-500 hover:text-sky-700">
+              <Link href="#" className="text-gray-600 hover:text-gray-900">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -131,25 +131,25 @@ export default function Footer() {
                 <span className="sr-only">Twitter</span>
               </Link>
             </div>
-            <p className="text-sm text-sky-500">Subscribe to our newsletter for the latest updates.</p>
+            <p className="text-sm text-gray-600">Subscribe to our newsletter for the latest updates.</p>
             <form className="flex space-x-2">
               <Input
                 placeholder="Enter your email"
                 type="email"
-                className="rounded-xl border-sky-200 focus:border-sky-400"
+                className="rounded-xl border-gray-200 focus:border-gray-400"
               />
               <Button
                 type="submit"
                 variant="outline"
-                className="rounded-xl border-sky-400 text-sky-600 hover:bg-sky-50"
+                className="rounded-xl border-gray-400 text-gray-600 hover:bg-gray-50"
               >
                 Subscribe
               </Button>
             </form>
           </div>
         </div>
-        <div className="mt-8 border-t border-sky-100 pt-8 text-center">
-          <p className="text-xs text-sky-400">© {new Date().getFullYear()} H R Apparel. All rights reserved.</p>
+        <div className="mt-8 border-t border-gray-100 pt-8 text-center">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} H R Apparel. All rights reserved.</p>
         </div>
       </div>
     </footer>

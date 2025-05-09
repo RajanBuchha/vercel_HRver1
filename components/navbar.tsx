@@ -41,100 +41,80 @@ export default function Navbar() {
             height={40}
             className="rounded-full"
           />
-          <span className="text-xl font-bold text-sky-600">H R Apparel</span>
+          <span className="text-xl font-bold text-gray-900">H R Apparel</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
+          <Link
+            href="/"
+            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+          >
+            Home
+          </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-sky-100 hover:text-sky-700 focus:bg-sky-100 focus:text-sky-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Homepage
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-sky-100 hover:text-sky-700 focus:bg-sky-100 focus:text-sky-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                  Products
-                </NavigationMenuTrigger>
+                <NavigationMenuTrigger>Brands</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-3 rounded-2xl p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {brands.map((brand) => (
-                      <Link
-                        key={brand.name}
-                        href={brand.href}
-                        className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-sky-100 hover:text-sky-700 focus:bg-sky-100 focus:text-sky-700"
-                      >
-                        <div className="text-sm font-medium leading-none">{brand.name}</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Explore {brand.name} collection
-                        </p>
-                      </Link>
+                      <li key={brand.name}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={brand.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-50 focus:text-gray-900"
+                          >
+                            <div className="text-sm font-medium leading-none">{brand.name}</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-sky-100 hover:text-sky-700 focus:bg-sky-100 focus:text-sky-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    About
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-sky-100 hover:text-sky-700 focus:bg-sky-100 focus:text-sky-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+          <Link
+            href="/about"
+            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="inline-flex items-center justify-center rounded-full p-2 text-sky-600 md:hidden"
+          className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
-          <span className="sr-only">Open main menu</span>
-          {isMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
+          {isMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            <Link
-              href="/"
-              className="block rounded-xl px-3 py-2 text-base font-medium text-sky-700 hover:bg-sky-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Homepage
-            </Link>
-            <div className="relative">
-              <button
-                className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-base font-medium text-sky-700 hover:bg-sky-100"
-                onClick={(e) => {
-                  e.preventDefault()
-                  const dropdown = document.getElementById("mobile-products-dropdown")
-                  if (dropdown) {
-                    dropdown.classList.toggle("hidden")
-                  }
-                }}
-              >
-                Products
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div id="mobile-products-dropdown" className="hidden space-y-1 px-4 py-2">
+          <nav className="container px-4 py-4 space-y-4">
+            <div className="space-y-2">
+              <div className="font-medium text-gray-600">Brands</div>
+              <div className="grid grid-cols-2 gap-2">
                 {brands.map((brand) => (
                   <Link
                     key={brand.name}
                     href={brand.href}
-                    className="block rounded-xl px-3 py-2 text-base font-medium text-sky-500 hover:bg-sky-100 hover:text-sky-700"
+                    className="text-sm text-gray-600 hover:text-gray-900"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {brand.name}
@@ -144,19 +124,26 @@ export default function Navbar() {
             </div>
             <Link
               href="/about"
-              className="block rounded-xl px-3 py-2 text-base font-medium text-sky-700 hover:bg-sky-100"
+              className="block text-sm font-medium text-gray-600 hover:text-gray-900"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="block rounded-xl px-3 py-2 text-base font-medium text-sky-700 hover:bg-sky-100"
+              className="block text-sm font-medium text-gray-600 hover:text-gray-900"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
-          </div>
+            <Link
+              href="/"
+              className="block text-sm font-medium text-gray-600 hover:text-gray-900"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+          </nav>
         </div>
       )}
     </header>

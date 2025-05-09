@@ -1,8 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Heart, ShoppingCart } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import type { Product } from "@/lib/types"
 
@@ -16,7 +14,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
       {products.map((product) => (
         <div
           key={product.id}
-          className="group bg-white rounded-2xl overflow-hidden border border-sky-100 transition-all hover:shadow-lg hover:shadow-sky-100"
+          className="group bg-white rounded-2xl overflow-hidden border border-gray-100 transition-all hover:shadow-lg hover:shadow-gray-100"
         >
           <div className="relative aspect-square overflow-hidden">
             <Link href={`/products/${product.id}`}>
@@ -29,39 +27,32 @@ export default function ProductGrid({ products }: ProductGridProps) {
             </Link>
 
             {product.isNew && (
-              <Badge className="absolute top-2 left-2 bg-sky-500 hover:bg-sky-600 rounded-full">New</Badge>
+              <Badge className="absolute top-2 left-2 bg-black hover:bg-gray-800 rounded-full text-white">New</Badge>
             )}
 
             {product.discount > 0 && (
-              <Badge className="absolute top-2 right-2 bg-rose-500 hover:bg-rose-600 rounded-full">
+              <Badge className="absolute top-2 right-2 bg-gray-800 hover:bg-gray-900 rounded-full text-white">
                 {product.discount}% OFF
               </Badge>
             )}
-
-            <div className="absolute bottom-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Button size="icon" variant="secondary" className="rounded-full bg-white hover:bg-sky-50">
-                <Heart className="h-4 w-4 text-sky-700" />
-                <span className="sr-only">Add to wishlist</span>
-              </Button>
-              <Button size="icon" variant="secondary" className="rounded-full bg-white hover:bg-sky-50">
-                <ShoppingCart className="h-4 w-4 text-sky-700" />
-                <span className="sr-only">Add to cart</span>
-              </Button>
-            </div>
           </div>
 
           <div className="p-4">
-            <Link href={`/products/${product.id}`} className="block">
-              <h3 className="font-medium text-sky-800 group-hover:text-sky-600 transition-colors">{product.name}</h3>
-              <p className="text-sm text-sky-500 mb-2">{product.category}</p>
-
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-sky-700">₹{product.price.toFixed(2)}</span>
+            <h3 className="text-sm font-medium text-gray-900">
+              <Link href={`/products/${product.id}`}>
+                <span aria-hidden="true" className="absolute inset-0" />
+                {product.name}
+              </Link>
+            </h3>
+            <p className="mt-1 text-sm text-gray-500">{product.category}</p>
+            <div className="mt-2 flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-gray-900">₹{product.price}</p>
                 {product.originalPrice > product.price && (
-                  <span className="text-sm text-sky-400 line-through">₹{product.originalPrice.toFixed(2)}</span>
+                  <p className="text-sm text-gray-500 line-through">₹{product.originalPrice}</p>
                 )}
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       ))}

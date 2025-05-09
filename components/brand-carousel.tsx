@@ -45,7 +45,7 @@ export default function BrandCarousel() {
 
   return (
     <div className="relative overflow-hidden rounded-3xl">
-      <div className="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden rounded-3xl">
+      <div className="relative h-[600px] w-[1200px] mx-auto overflow-hidden rounded-3xl">
         {brands.map((brand, index) => (
           <div
             key={brand.id}
