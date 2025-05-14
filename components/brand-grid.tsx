@@ -3,16 +3,15 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const brands = [
-  { id: 1, name: "Bodycare", image: "/images/bodycare-banner.png" },
-  { id: 2, name: "Lyra", image: "/images/lyra-banner-new.png" },
-  { id: 3, name: "Supersox", image: "/images/supersox-banner-new.png" },
-  { id: 4, name: "Zeel", image: "/images/zeel-banner-new.png" },
-  { id: 5, name: "Pinklush", image: "/placeholder.svg?height=400&width=400" },
-  { id: 6, name: "Zoom", image: "/placeholder.svg?height=400&width=400" },
-  { id: 7, name: "Mitushi", image: "/images/mitushi-banner-new.png" },
-  { id: 8, name: "Niomoda", image: "/placeholder.svg?height=400&width=400" },
-  { id: 9, name: "Citizen", image: "/placeholder.svg?height=400&width=400" },
-  { id: 10, name: "Tag Hills", image: "/placeholder.svg?height=400&width=400" },
+  { id: 1, name: "Lyra", image: "/brand-logos/lyra.png" },
+  { id: 2, name: "Bodycare", image: "/brand-logos/bodycare.png" },
+  { id: 3, name: "Tag Hills", image: "/brand-logos/taghills.png" },
+  { id: 4, name: "Mitushi", image: "/brand-logos/mitushi.png" },
+  { id: 5, name: "Zoom", image: "/brand-logos/zoom.png" },
+  { id: 6, name: "Citizen", image: "/brand-logos/citizen.png" },
+  { id: 7, name: "Zeel", image: "/brand-logos/zeel.png" },
+  { id: 8, name: "Pinklush", image: "/brand-logos/pinklush.png" },
+  { id: 9, name: "Niomoda", image: "/brand-logos/niomoda.png" },
 ]
 
 export default function BrandGrid() {
